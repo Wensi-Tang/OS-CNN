@@ -4,6 +4,10 @@ see this
 https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
 !!!!!
 ###
+my environment is:
+python 3.5
+pytorch 1.1.0
+###
 
 
 1_1_OS-CNN_easy_use_Run_and_Save_Model.ipynb
