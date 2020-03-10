@@ -7,8 +7,9 @@ https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
 !!!!!
 ###
 my environment is:
-python 3.5
-pytorch 1.1.0
+python == 3.5
+pytorch == 1.1.0
+scikit-learn == 0.21.3.
 ###
 
 

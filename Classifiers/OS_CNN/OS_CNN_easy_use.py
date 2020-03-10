@@ -130,7 +130,7 @@ class OS_CNN_easy_use():
         X_test = X_test.unsqueeze_(1).to(self.device)
         
         test_dataset = TensorDataset(X_test)
-        test_loader = DataLoader(test_dataset, batch_size=int(min(X_test.shape[0] / 10, self.batch_size)), shuffle=False)
+        test_loader = DataLoader(test_dataset, batch_size=max(int(min(X_train.shape[0] / 10, self.batch_size)),2), shuffle=False)
         
         self.OS_CNN.eval()
         
