@@ -1,16 +1,32 @@
 This is code for the paper here: https://arxiv.org/abs/2002.10061
 
 ###
-Github some times cannot render ipynb file if you find some pages cannot load plz wait for a while, and try again!!!!
-see this
-https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
-!!!!!
-###
+For use： 
 my environment is:
 python == 3.5
 pytorch == 1.1.0
 scikit-learn == 0.21.3.
+
+### Easy use ###
+1_1_OS-CNN_easy_use_Run_and_Save_Model.ipynb
+    This is a easy use OS-CNN
+    search "X_train, y_train, X_test, y_test = TSC_data_loader(dataset_path, dataset_name)"
+    you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UCR dataset you want to run
 ###
+
+### OS Vs Inception ###
+For people who think the OS-CNN is a type of Inception, please have a look at this 
+###
+
+### I cannot see anything ###
+Github some times cannot render ipynb file if you find some pages cannot load plz wait for a while, and try again!!!!
+see this
+https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
+!!!!!
+####
+
+
+#### read me ####
 
 
 1_1_OS-CNN_easy_use_Run_and_Save_Model.ipynb
