@@ -19,6 +19,7 @@ class OS_CNN_easy_use():
     def __init__(self,Result_log_folder, 
                  dataset_name, 
                  device, 
+                 start_kernel_size = 1,
                  Max_kernel_size = 89, 
                  paramenter_number_of_layer_list = [8*128, 5*128*256 + 2*256*128], 
                  max_epoch = 2000, 
@@ -40,7 +41,7 @@ class OS_CNN_easy_use():
         self.Initial_model_path = Initial_model_path
         self.device = torch.device(device if torch.cuda.is_available() else "cpu")
         
-        
+        self.start_kernel_size = start_kernel_size
         self.Max_kernel_size = Max_kernel_size
         self.paramenter_number_of_layer_list = paramenter_number_of_layer_list
         self.max_epoch = max_epoch
@@ -54,26 +55,35 @@ class OS_CNN_easy_use():
 
         print('code is running on ',self.device)
         
+        
         # covert numpy to pytorch tensor and put into gpu
         X_train = torch.from_numpy(X_train)
         X_train.requires_grad = False
-        X_train = X_train.unsqueeze_(1).to(self.device)
+        X_train = X_train.to(self.device)
         y_train = torch.from_numpy(y_train).to(self.device)
-        
         
         
         X_test = torch.from_numpy(X_val)
         X_test.requires_grad = False
-        X_test = X_test.unsqueeze_(1).to(self.device)
+        X_test = X_test.to(self.device)
         y_test = torch.from_numpy(y_val).to(self.device)
         
         
+        # add channel dimension to time series data
+        if len(X_train.shape) == 2:
+            X_train = X_train.unsqueeze_(1)
+            X_test = X_test.unsqueeze_(1)
+
         input_shape = X_train.shape[-1]
         n_class = max(y_train) + 1
         receptive_field_shape= min(int(X_train.shape[-1]/4),self.Max_kernel_size)
         
         # generate parameter list
-        layer_parameter_list = generate_layer_parameter_list(1,receptive_field_shape,self.paramenter_number_of_layer_list)
+        layer_parameter_list = generate_layer_parameter_list(self.start_kernel_size,
+                                                             receptive_field_shape,
+                                                             self.paramenter_number_of_layer_list,
+                                                             in_channel = int(X_train.shape[1]))
+        
         
         torch_OS_CNN = OS_CNN(layer_parameter_list, n_class.item(), False).to(self.device)
         
@@ -127,7 +137,10 @@ class OS_CNN_easy_use():
         
         X_test = torch.from_numpy(X_test)
         X_test.requires_grad = False
-        X_test = X_test.unsqueeze_(1).to(self.device)
+        X_test = X_test.to(self.device)
+        
+        if len(X_test.shape) == 2:
+            X_test = X_test.unsqueeze_(1)
         
         test_dataset = TensorDataset(X_test)
         test_loader = DataLoader(test_dataset, batch_size=max(int(min(X_test.shape[0] / 10, self.batch_size)),2), shuffle=False)
