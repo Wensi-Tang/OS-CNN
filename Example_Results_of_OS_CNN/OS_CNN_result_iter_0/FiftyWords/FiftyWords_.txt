@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 train_acc=	0.9266666666666666	 test_acc=	0.7274725274725274
 train_acc=	0.9911111111111112	 test_acc=	0.7670329670329671
 train_acc=	1.0	 test_acc=	0.8087912087912088
@@ -8,3 +9,15 @@ train_acc=	1.0	 test_acc=	0.8197802197802198
 train_acc=	1.0	 test_acc=	0.810989010989011
 train_acc=	1.0	 test_acc=	0.8175824175824176
 train_acc=	1.0	 test_acc=	0.8219780219780219
+=======
+train_acc=	0.8777777777777778	 test_acc=	0.6989010989010989
+train_acc=	0.9822222222222222	 test_acc=	0.789010989010989
+train_acc=	1.0	 test_acc=	0.8043956043956044
+train_acc=	1.0	 test_acc=	0.8043956043956044
+train_acc=	1.0	 test_acc=	0.810989010989011
+train_acc=	1.0	 test_acc=	0.7978021978021979
+train_acc=	1.0	 test_acc=	0.810989010989011
+train_acc=	1.0	 test_acc=	0.8131868131868132
+train_acc=	1.0	 test_acc=	0.8131868131868132
+train_acc=	1.0	 test_acc=	0.8153846153846154
+>>>>>>> 8dfec09400f9d15031d729861ccfebe6a82c1c5a
