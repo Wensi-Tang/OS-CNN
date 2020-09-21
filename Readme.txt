@@ -56,7 +56,7 @@ https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
 
 
 2_2_1_OS_OS-CNN_easy_use_Run_and_Save_Model_for_multivariate.ipynb
-    This is a easy use OS_OS-CNN on multivariate dataset
+    This is an easy use OS_OS-CNN on multivariate dataset
     the OS_OS-CNN is using OS layer on each variate of multivariate then put the feature map into an OS-CNN
     search "X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)"
     you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UEA dataset you want to run
