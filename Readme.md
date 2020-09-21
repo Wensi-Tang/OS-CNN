@@ -17,7 +17,7 @@ scikit-learn == 0.21.3
 
 2\_1\_1\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model\_for\_multivariate.ipynb
 
-> This is an easy use OS-CNN on multivariate dataset
+> This is an easy use OS-CNN on multivariate dataset  
 > search `X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)`  
 > you could replace the `X_train, y_train, X_test, y_test` as you want, or you could change dataset_name to determine which UEA dataset you want to run
 
@@ -53,7 +53,7 @@ Github some times cannot render ipynb file if you find some pages cannot load pl
 
 
 2\_2\_1\_OS\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model\_for\_multivariate.ipynb
->  This is an easy use OS_OS-CNN on multivariate dataset  
+>  This is an easy use OS\_OS-CNN on multivariate dataset  
 >  the OS\_OS-CNN is using OS layer on each variate of multivariate then put the feature map into an OS-CNN  
 >  search `X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)`  
 >  you could replace the `X_train, y_train, X_test, y_test` as you like, or you could change dataset_name to determine which UEA dataset you want to run
@@ -70,7 +70,8 @@ Folder ./Code\_example\_of\_theoretical\_proof/ has the code verification of the
         Code verification of Section 3.2
     
     2_1_Time_and_Space_Complexity_of_OS-CNN_Vs_FCN_ResNet.ipynb
-        This code shows the model size of OS-CNN and Resnet and FCN. It shows the OS-CNN is of better time and space complexity than SOTA
+        This code shows the model size of OS-CNN and Resnet and FCN. 
+        It shows the OS-CNN is of better time and space complexity than SOTA
     
     3_1_verification _of_Pytorch_FCN_&_ResNet_implementation.ipynb
         This code verifies the FCN and ResNet Pytorch implementation is correct
