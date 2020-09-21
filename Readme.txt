@@ -15,9 +15,6 @@ scikit-learn == 0.21.3.
     you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UCR dataset you want to run
 ###
 
-### OS Vs Inception ###
-For people who think the OS-CNN is a type of Inception, please have a look at this 
-###
 
 ### I cannot see anything ###
 Github some times cannot render ipynb file if you find some pages cannot load plz wait for a while, and try again!!!!
