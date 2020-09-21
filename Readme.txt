@@ -10,10 +10,23 @@ scikit-learn == 0.21.3.
 
 ### Easy use ###
 1_1_OS-CNN_easy_use_Run_and_Save_Model.ipynb
-    This is a easy use OS-CNN
+    This is an easy use OS-CNN on univeriate dataset
     search "X_train, y_train, X_test, y_test = TSC_data_loader(dataset_path, dataset_name)"
     you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UCR dataset you want to run
-###
+    
+
+2_1_1_OS-CNN_easy_use_Run_and_Save_Model_for_multivariate.ipynb
+
+    This is an easy use OS-CNN on multivariate dataset
+    search "X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)"
+    you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UEA dataset you want to run
+
+### Full Result ###
+
+In ./Full_Results folder
+We have results of OS-CNN for UCR 85 datasets, UCR 128 datasets, and UEA 30 datasets.
+
+
 
 
 ### I cannot see anything ###
@@ -24,11 +37,10 @@ https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
 ####
 
 
+
 #### read me ####
-
-
 1_1_OS-CNN_easy_use_Run_and_Save_Model.ipynb
-    This is a easy use OS-CNN
+    This is an easy use OS-CNN
     search "X_train, y_train, X_test, y_test = TSC_data_loader(dataset_path, dataset_name)"
     you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UCR dataset you want to run
 
@@ -36,10 +48,21 @@ https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082
 1_2_OS-CNN_load_saved_model_for_prediction.ipynb
     This code could help you to load morel and use the model for prediction (it should be used after 1_1 both them can train and save model)
     
-1_3_OS-CNN_network_structure.ipynb
-    This shows the network structure of OS-CNN
+    
+2_1_1_OS-CNN_easy_use_Run_and_Save_Model_for_multivariate.ipynb
+    This is an easy use OS-CNN on multivariate dataset
+    search "X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)"
+    you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UEA dataset you want to run
 
-1_4_compare_result.ipynb
+
+2_2_1_OS_OS-CNN_easy_use_Run_and_Save_Model_for_multivariate.ipynb
+    This is a easy use OS_OS-CNN on multivariate dataset
+    the OS_OS-CNN is using OS layer on each variate of multivariate then put the feature map into an OS-CNN
+    search "X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)"
+    you could replace the "X_train, y_train, X_test, y_test" as you like, or you could change dataset_name to determine which UEA dataset you want to run
+
+
+3_1_compare_result.ipynb
     In here, you could select different models to compare with os-cnn
 
 
@@ -76,8 +99,12 @@ Folder ./Code_example_of_theoretical_proof/ has the code verification of theoret
     4_5_Enough_channel.ipynb
         This is code for Section 5.
 
-Appendix folder is some supplementary material:
+Folder ./Appendix has some supplementary material:
 	1. Proof of No representation ability lose is a theoretical proof of no representation ability lose
-	2. The novelty of OS-CNN is a demonstration for why it can reduce model size.
+	2. The novelty of OS-CNN is a demonstration for why it can reduce model size
+	3. OS-CNN_network_structure.ipynb  It shows the network structure of OS-CNN
+    
+    
+Folder ./Texas_Sharpshooter_plot has materials for comparison between OS-CNN and cDTW by Texas_Sharpshooter_plot   
         
     
