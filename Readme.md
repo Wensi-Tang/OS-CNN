@@ -8,12 +8,21 @@ pytorch == 1.1.0
 scikit-learn == 0.21.3
 
 ### Easy use
+
+Try [Google Colab](https://colab.research.google.com/)
+
+Import this file [OS_CNN_Colab_demo.ipynb](https://github.com/Wensi-Tang/OS-CNN/blob/master/OS_CNN_Colab_demo.ipynb)
+
+**or** 
+
+Run With Jupyter Notebook
+
 1\_1\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model.ipynb
 
 > This is an easy use of OS-CNN on univeriate dataset  
 > Search `X_train, y_train, X_test, y_test = TSC_data_loader(dataset_path, dataset_name)`  
 > you could replace the `X_train, y_train, X_test, y_test` as you want, or you could change dataset_name to determine which UCR dataset you want to run
-    
+
 
 2\_1\_1\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model\_for\_multivariate.ipynb
 
@@ -41,11 +50,11 @@ Github some times cannot render ipynb file if you find some pages cannot load pl
 >  search `X_train, y_train, X_test, y_test = TSC_data_loader(dataset_path, dataset_name)`  
 >   you could replace the `X_train, y_train, X_test, y_test` as you like, or you could change dataset_name to determine which UCR dataset you want to run
 
-    
+
 1\_2\_OS-CNN\_load\_saved\_model\_for\_prediction.ipynb   
 > This code could help you to load morel and use the model for prediction (it needs model trained by 1\_1\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model.ipynb)
-    
-    
+
+
 2\_1\_1\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model\_for\_multivariate.ipynb
 >  This is an easy use OS-CNN on multivariate dataset  
 >  search `X_train, y_train, X_test, y_test = TSC_multivariate_data_loader(dataset_path, dataset_name)`  
@@ -103,8 +112,9 @@ Folder ./Appendix has some supplementary material:
 	1. Proof of No representation ability lose is a theoretical proof of no representation ability lose
 	2. The novelty of OS-CNN is a demonstration for why it can reduce model size
 	3. OS-CNN_network_structure.ipynb  It shows the network structure of OS-CNN
-    
-    
+
+
+​    
 Folder ./Texas\_Sharpshooter\_plot has materials for comparison between OS-CNN and cDTW by Texas Sharpshooter plot   
-        
-    
+​        
+​    
