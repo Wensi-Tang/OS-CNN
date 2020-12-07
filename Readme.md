@@ -44,7 +44,7 @@ Github some times cannot render ipynb file if you find some pages cannot load pl
 
 
 
-#### Detailed description of each file
+### Detailed description of each file
 1\_1\_OS-CNN\_easy\_use\_Run\_and\_Save\_Model.ipynb  
 >  This is an easy use OS-CNN  
 >  search `X_train, y_train, X_test, y_test = TSC_data_loader(dataset_path, dataset_name)`  
