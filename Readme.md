@@ -1,5 +1,9 @@
 This is code for the paper [here](https://arxiv.org/abs/2002.10061)
-It is SOTA on both [UCR and UEA](http://www.timeseriesclassification.com/), [Speechcommands V2 35](https://pytorch.org/tutorials/intermediate/speech_command_recognition_with_torchaudio.html#importing-the-dataset)
+
+###
+OS-CNN achieves SOTA on both [UCR and UEA](http://www.timeseriesclassification.com/), and [Speechcommands V2 35](https://pytorch.org/tutorials/intermediate/speech_command_recognition_with_torchaudio.html#importing-the-dataset) and some private datasets. Just have a try.
+###
+
 
 
 ### Environment 
