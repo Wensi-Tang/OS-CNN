@@ -1,13 +1,22 @@
+!!!! Sometimes GitHub cannot render ipynb file. It's Github's [problem](https://github.com/jupyter/notebook/issues/3555#issuecomment-403361082) just wait for a few minutes and try again. !!!!
+
+
+
 This is code for the paper [here](https://arxiv.org/abs/2002.10061)
 
-### OS-CNN achieves SOTA on many datasets
+
+### OS-CNN achieves SOTA on many datasets 
+
 [UCR and UEA](http://www.timeseriesclassification.com/), 
 
 [Speechcommands V2 35](https://pytorch.org/tutorials/intermediate/speech_command_recognition_with_torchaudio.html#importing-the-dataset),
 
 and some private datasets. 
 
+#### with just the default hyperpermeter setting! no need to search!
+
 Just have a try!!!
+
 
 ### Environment 
 
