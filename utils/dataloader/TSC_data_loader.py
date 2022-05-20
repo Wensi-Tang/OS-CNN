@@ -213,3 +213,43 @@ def TSC_data_loader(dataset_path,dataset_name):
     y_train = le.transform(np.squeeze(y_train, axis=1))
     y_test = le.transform(np.squeeze(y_test, axis=1))
     return set_nan_to_zero(X_train), y_train, set_nan_to_zero(X_test), y_test
+
+
+def check_normalized(X_train,X_test,dataset_name):
+    mean_of_feature_cols_train = np.nanmean(X_train, axis=1, keepdims= True)
+    std_of_feature_cols_train = np.nanstd(X_train, axis=1, keepdims= True)
+    if np.nanmean(abs(mean_of_feature_cols_train)) < 1e-7 and abs(np.nanmean(std_of_feature_cols_train)-1) < 0.05 :
+        return X_train,X_test
+    else:
+        print(dataset_name,"is not normalized, let's do it")
+        print('mean = ',np.nanmean(mean_of_feature_cols_train), 'std = ',np.nanmean(std_of_feature_cols_train))
+        mean_of_feature_cols_test = np.nanmean(X_test, axis=1, keepdims= True)
+        std_of_feature_cols_train = np.nanstd(X_train, axis=1, keepdims= True)
+        std_of_feature_cols_test = np.nanstd(X_test, axis=1, keepdims= True)
+        X_train = (X_train -mean_of_feature_cols_train)/std_of_feature_cols_train
+        X_test = (X_test -mean_of_feature_cols_test)/std_of_feature_cols_test
+        return X_train, X_test
+    
+
+def TSC_data_loader_with_z_normaliz_check(dataset_path,dataset_name):
+    Train_dataset = np.loadtxt(
+        dataset_path + '/' + dataset_name + '/' + dataset_name + '_TRAIN.tsv')
+    Test_dataset = np.loadtxt(
+        dataset_path + '/' + dataset_name + '/' + dataset_name + '_TEST.tsv')
+    Train_dataset = Train_dataset.astype(np.float32)
+    Test_dataset = Test_dataset.astype(np.float32)
+
+    X_train = Train_dataset[:, 1:]
+    y_train = Train_dataset[:, 0:1]
+
+    X_test = Test_dataset[:, 1:]
+    y_test = Test_dataset[:, 0:1]
+    le = preprocessing.LabelEncoder()
+    le.fit(np.squeeze(y_train, axis=1))
+    y_train = le.transform(np.squeeze(y_train, axis=1))
+    y_test = le.transform(np.squeeze(y_test, axis=1))
+    
+    
+    X_train,X_test = check_normalized(X_train,X_test,dataset_name)
+    
+    return set_nan_to_zero(X_train), y_train, set_nan_to_zero(X_test), y_test
