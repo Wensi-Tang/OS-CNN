@@ -11,7 +11,7 @@ from torch.utils.data import TensorDataset
 
 from .OS_CNN_Structure_build import generate_layer_parameter_list
 from .log_manager import eval_condition, eval_model, save_to_log
-from .OS_CNN import OS_CNN
+from .OS_CNN_res import OS_CNN_res as OS_CNN
 
 
 class OS_CNN_easy_use():
@@ -25,7 +25,8 @@ class OS_CNN_easy_use():
                  max_epoch = 2000, 
                  batch_size=16,
                  print_result_every_x_epoch = 50,
-                 lr = 0.001
+                 n_OS_layer = 3,
+                 lr = None
                 ):
         
         super(OS_CNN_easy_use, self).__init__()
@@ -48,7 +49,12 @@ class OS_CNN_easy_use():
         self.max_epoch = max_epoch
         self.batch_size = batch_size
         self.print_result_every_x_epoch = print_result_every_x_epoch
-        self.lr = lr
+        self.n_OS_layer = n_OS_layer
+        
+        if lr == None:
+            self.lr = 0.001
+        else:
+            self.lr = lr
         self.OS_CNN = None
         
         
@@ -86,7 +92,7 @@ class OS_CNN_easy_use():
                                                              in_channel = int(X_train.shape[1]))
         
         
-        torch_OS_CNN = OS_CNN(layer_parameter_list, n_class.item(), False).to(self.device)
+        torch_OS_CNN = OS_CNN(layer_parameter_list, n_class.item(), self.n_OS_layer,False).to(self.device)
         
         # save_initial_weight
         torch.save(torch_OS_CNN.state_dict(), self.Initial_model_path)
@@ -94,7 +100,7 @@ class OS_CNN_easy_use():
         
         # loss, optimizer, scheduler
         criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(torch_OS_CNN.parameters(),lr= self.lr)
+        optimizer = optim.Adam(torch_OS_CNN.parameters(),lr=self.lr)
         scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.5, patience=50, min_lr=0.0001)
         
         # build dataloader
