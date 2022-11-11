@@ -5,6 +5,14 @@
 This is code for the paper [Omni-Scale CNNs: a simple and effective kernel size configuration for time series classification (ICLR 2022)](https://arxiv.org/abs/2002.10061)
 
 
+	@inproceedings{tang2021omni,
+	  title={Omni-Scale CNNs: a simple and effective kernel size configuration for time series classification},
+	  author={Tang, Wensi and Long, Guodong and Liu, Lu and Zhou, Tianyi and Blumenstein, Michael and Jiang, Jing},
+	  booktitle={International Conference on Learning Representations},
+	  year={2021}
+	}
+
+
 ### OS-CNN achieves SOTA on
 
 [UCR and UEA](http://www.timeseriesclassification.com/) archives and some private datasets. 
