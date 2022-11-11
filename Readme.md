@@ -2,7 +2,7 @@
 
 
 
-This is code for the paper [here](https://arxiv.org/abs/2002.10061)
+This is code for the paper [Omni-Scale CNNs: a simple and effective kernel size configuration for time series classification (ICLR 2022)](https://arxiv.org/abs/2002.10061)
 
 
 ### OS-CNN achieves SOTA on
